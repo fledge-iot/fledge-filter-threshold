@@ -1,0 +1,1 @@
+FogLAMP threshold filter. Only send data when a condition evaluates to true.
