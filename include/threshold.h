@@ -2,7 +2,7 @@
 #define _THRESHOLD_FILTER_H
 
 /*
- * FogLAMP "threshold" filter plugin.
+ * Fledge "threshold" filter plugin.
  *
  * Copyright (c) 2019 Dianomic Systems
  *
@@ -26,7 +26,7 @@
  *
  * Only send data on when a threshold expression evaluates to true
  */
-class ThresholdFilter : public FogLampFilter {
+class ThresholdFilter : public FledgeFilter {
 	public:
 		ThresholdFilter(const std::string& filterName,
                         ConfigCategory& filterConfig,

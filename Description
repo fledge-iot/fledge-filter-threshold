@@ -1,1 +1,1 @@
-FogLAMP threshold filter. Only send data when a condition evaluates to true.
+Fledge threshold filter. Only send data when a condition evaluates to true.

@@ -1,5 +1,5 @@
 /*
- * FogLAMP "threshold" filter plugin.
+ * Fledge "threshold" filter plugin.
  *
  * Copyright (c) 2019 Dianomic Systems
  *
