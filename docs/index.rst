@@ -23,13 +23,13 @@ Another example use might be to have two north streams, one that uses a high cos
 
 E.g. We have a temperature critical process, when the temperature is above 80 degrees it most be closely monitored. We use a high cost link to send data north wards in this case. We would have a north task setup that has the threshold filter with the condition:
 
-.. code-block:: expression
+.. code-block:: console
 
   temperature >= 80
 
 We then have a second, lower cost link with a north task using the threshold filter with the condition:
 
-.. code-block:: expression
+.. code-block:: console
 
   temperature < 80
 
@@ -70,7 +70,7 @@ The *fledge-filter-threshold* plugin makes use of the |exprtk| library to do run
 
 Within the expression the data points of the asset become symbols that may be used; therefore if an asset contains values "voltage" and "current" the expression will contain those as symbols and an expression of the form
 
-.. code-block:: expression
+.. code-block:: console
 
    voltage * current > 1000
 
