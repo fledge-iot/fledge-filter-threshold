@@ -4,7 +4,7 @@
 .. Links
 .. |exprtk| raw:: html
 
-   <a href"=http://www.partow.net/programming/exprtk/index.html">ExprTk</a>
+   <a href="http://www.partow.net/programming/exprtk/index.html">ExprTk</a>
 
 
 Fledge Threshold Filter
