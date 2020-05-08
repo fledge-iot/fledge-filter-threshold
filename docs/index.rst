@@ -7,8 +7,8 @@
    <a href="http://www.partow.net/programming/exprtk/index.html">ExprTk</a>
 
 
-Fledge Threshold Filter
-=======================
+Threshold Filter
+================
 
 The *fledge-filter-threshold* plugin is a filter that is used to control the forwarding of data within Fledge. Its use is to only allow data to be stored or forwarded if a condition about that data is true. This can save storage or network bandwidth by eliminating data that is of no interest.
 
