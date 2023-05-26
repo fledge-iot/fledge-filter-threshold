@@ -159,6 +159,8 @@ int				varCount = 0;
 		}
 		else
 		{
+			// Need to delete source readings if they are not put into output reading set, 
+			// since image datapoints need to be de-allocated from heap
 			delete(*reading);
 		}
 	}
