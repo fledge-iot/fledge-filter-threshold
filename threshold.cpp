@@ -157,6 +157,10 @@ int				varCount = 0;
 		{
 			out.push_back(*reading);
 		}
+		else
+		{
+			delete(*reading);
+		}
 	}
 	readings->clear();
 }
