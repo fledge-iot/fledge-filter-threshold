@@ -15,3 +15,4 @@ tests/*.xml
 
 # IDE
 *.idea
+*.vscode
