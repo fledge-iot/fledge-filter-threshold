@@ -5,20 +5,20 @@ Fledge "Threshold" Filter plugin
 A filter that applies a threshold function to the data stream and only
 passes data when this expression evaluates to true.
 
-If an asset, or dat astream in the case of a north task, has other data
+If an asset, or data stream in the case of a north task, has other data
 points or assets that are not part of the expression, then they too are
-subject to the threshold. If the expression evalues to false then no
+subject to the threshold. If the expression evaluates to false then no
 assets will be forwarded on that stream. This allows a single value to
 control the forwarding of data.
 
 Any example use might be to have two north streams, one that uses a high
-cost, link to send data when soem condition that requires close montirign
-occurs and the othe rthat is used to send data by a lower cost mechanism
+cost, link to send data when some condition that requires close monitoring
+occurs and the other that is used to send data by a lower cost mechanism
 when normal operating conditions apply.
 
 E.g. We have a temperature critical process, when the temperature is
-above 80 degrees it most be closely monutored. We use a high cost link
-to send data north wards in this case. We woudl have a north task setup
+above 80 degrees it most be closely monitored. We use a high cost link
+to send data north wards in this case. We would have a north task setup
 that has the threshold filter with the condition:
 
   temperature >= 80

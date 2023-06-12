@@ -98,6 +98,7 @@ int				varCount = 0;
 						      ++reading)
 	{
 		datapoints = (*reading)->getReadingData();
+		m_triggered = false;
 		for (auto it = datapoints.begin(); it != datapoints.end(); it++)
 		{
 			string name = (*it)->getName();
