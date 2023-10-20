@@ -98,6 +98,7 @@ int				varCount = 0;
 						      ++reading)
 	{
 		datapoints = (*reading)->getReadingData();
+		m_triggered = false;
 		for (auto it = datapoints.begin(); it != datapoints.end(); it++)
 		{
 			string name = (*it)->getName();
@@ -156,6 +157,12 @@ int				varCount = 0;
 		if (m_triggered)
 		{
 			out.push_back(*reading);
+		}
+		else
+		{
+			// Need to delete source readings if they are not put into output reading set, 
+			// since image datapoints need to be de-allocated from heap
+			delete(*reading);
 		}
 	}
 	readings->clear();
