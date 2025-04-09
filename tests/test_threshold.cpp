@@ -19,6 +19,7 @@ extern "C" {
 	PLUGIN_HANDLE plugin_init(ConfigCategory* config,
 			  OUTPUT_HANDLE *outHandle,
 			  OUTPUT_STREAM output);
+	void plugin_shutdown(PLUGIN_HANDLE handle);
 	int called = 0;
 
 	void Handler(void *handle, READINGSET *readings)
@@ -50,6 +51,7 @@ TEST(THRESHOLD, thresholdDisabled)
 	readings->push_back(in);
 
 	ReadingSet* readingSet = new ReadingSet(readings);
+	delete readings;
 	plugin_ingest(handle, (READINGSET *)readingSet);
 
 	vector<Reading *>results = outReadings->getAllReadings();
@@ -62,6 +64,10 @@ TEST(THRESHOLD, thresholdDisabled)
     ASSERT_EQ(points.size(), 1);
 	Datapoint *outdp = points[0];
 	ASSERT_STREQ(outdp->getName().c_str(), "speed");
+
+	delete outReadings;
+	plugin_shutdown(handle);
+	delete config;
 
 }
 
@@ -87,6 +93,7 @@ TEST(THRESHOLD, thresholdExpressionCheck1)
 	readings->push_back(in);
 
 	ReadingSet* readingSet = new ReadingSet(readings);
+	delete readings;
 	plugin_ingest(handle, (READINGSET *)readingSet);
 	
 	vector<Reading *>results = outReadings->getAllReadings();
@@ -99,6 +106,10 @@ TEST(THRESHOLD, thresholdExpressionCheck1)
     ASSERT_EQ(points.size(), 1);
 	Datapoint *outdp = points[0];
 	ASSERT_STREQ(outdp->getName().c_str(), "speed");
+
+	delete outReadings;
+	plugin_shutdown(handle);
+	delete config;
 }
 
 TEST(THRESHOLD, thresholdExpressionCheck2)
@@ -123,9 +134,14 @@ TEST(THRESHOLD, thresholdExpressionCheck2)
 	readings->push_back(in);
 
 	ReadingSet* readingSet = new ReadingSet(readings);
+	delete readings;
 	plugin_ingest(handle, (READINGSET *)readingSet);
 	
 	vector<Reading *>results = outReadings->getAllReadings();
     ASSERT_EQ(results.size(), 0);
+
+	delete outReadings;
+	plugin_shutdown(handle);
+	delete config;
    
 }
